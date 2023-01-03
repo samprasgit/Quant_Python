@@ -1,4 +1,4 @@
-# 【2021】Python数据清洗方法汇总
+# 【2023】Python数据清洗方法汇总
 
 
 
@@ -255,30 +255,35 @@ ts.index = (prng.asfreq('M', 'e') + 1).asfreq('H', 's') + 9
 
 ```python
 #创建列表
-s1=[]                                          #創建了一個空列表
-s2=[32.0,212.0,0.0,81.8,100.0,45.3]            #創建了一個浮點數列表
-s3=['toyota','rav4',2.2,]                      #創建了一個含不同類型數據的列表
-list_of_list=[temps, car_details]              #創建了一個所含對象為列表的列表       
-list('asda')                                   #字符串转成list
+s1 = []  #創建了一個空列表
+s2 = [32.0, 212.0, 0.0, 81.8, 100.0, 45.3]  #創建了一個浮點數列表
+s3 = [
+    'toyota',
+    'rav4',
+    2.2,
+]  #創建了一個含不同類型數據的列表
+list_of_list=[temps, car_details]              #創建了一個所含對象為列表的列表
+list('asda')  #字符串转成list
 
 #元素
-len(list) #列表元素个数
-max(list) #返回列表元素最大值
-min(list) #返回列表元素最小值
+len(list)  #列表元素个数
+max(list)  #返回列表元素最大值
+min(list)  #返回列表元素最小值
 list(seq) #将元组转换为列表
 list.count(obj) #统计某个元素在列表中出现的次数
 
 #编辑列表
-found.append('a')                              #添加单个
-nums.remove(2)                                 #移除第二个
-nums.pop(2)								       #移除倒数第二个
-nums.extend([3,4])                             #添加多个
-nums.insert(2,'hello')                         #在第二个位置插入
-nums.reverse()                                 #顺序反转
-third=first.copy()                             #复制
-letter[start:end:step]                         #列表切片
-list.clear()                                   #清空列表
-list.sort( key=None, reverse=False)            #对原列表进行排序
+nums = []
+nums.append('a')  #添加单个
+nums.remove(2)  #移除第二个
+nums.pop(2)  #移除倒数第二个
+nums.extend([3, 4])  #添加多个
+nums.insert(2, 'hello')  #在第二个位置插入
+nums.reverse()  #顺序反转
+first = nums.copy()  #复制
+first[start:end:step]                         #列表切片
+list.clear()  #清空列表
+list.sort(key=None, reverse=False)  #对原列表进行排序
 ```
 
 | 列表运算表达式                        | 结果                         | 描述                 |
@@ -295,14 +300,14 @@ list.sort( key=None, reverse=False)            #对原列表进行排序
 
 ```python
 #创建元组
-vowels2=('a','e','i','o','u')                  #建立元组
-T = tuple([1,2,3,4])                           #list转成tuple
-tuple('spam')                                  #字符串转成tuple
+vowels2 = ('a', 'e', 'i', 'o', 'u')  #建立元组
+T = tuple([1, 2, 3, 4])  #list转成tuple
+tuple('spam')  #字符串转成tuple
 
 #元组查找
-list/tuple.index(x, start, end) 
+list / tuple.index(x, start, end)
 T = (1, 3, 2, 4, 2, 5, 2)
-T.index(4), T.index(2,3), T.count(2), T.index(2, T.count(2))
+T.index(4), T.index(2, 3), T.count(2), T.index(2, T.count(2))
 #(3, 4, 3, 4)
 ```
 
@@ -310,7 +315,7 @@ T.index(4), T.index(2,3), T.count(2), T.index(2, T.count(2))
 
 ```python
 #创建集合
-vowels={"a",'e','e','i','o','u','u'}            #建立集合
+vowels = {"a",'e','e','i','o','u','u'}            #建立集合
 set([1,2,3,4,5,2,3])  					      #list转set
 vowels2=set("aeeiou")					      #字符串转set
 
@@ -323,15 +328,15 @@ set.discard( obj )
 set.pop()                                       #随机删除集合中的一个元素
 
 #并集
-u=v1.union(set(v2))
+u = v1.union(set(v2))
 set.symmetric_difference(set)                   #返回两个集合中不重复的元素集合
 
 #差集
-d=v1.difference(set(v2))
+d = v1.difference(set(v2))
 set.symmetric_difference_update(set)            #移除当前集合中在另外一个指定集合相同的元素，并将另外一个指定集合中不同的元素插入到当前集合中。
 
 #交集
-i=v1.intersection(set(v2))
+i = v1.intersection(set(v2))
 set.intersection(set1, set2 ... etc)           #返回多个集合的交集，返回一个新的集合
 set.intersection_update(set1, set2 ... etc)    #返回多个集合的交集，移除不重叠的元素
 
@@ -345,8 +350,8 @@ set.isdisjoint(set)                           #判断两个集合是否包含相
 
 ```python
 #建立字典
-Dict1={}                                         #建立空词典
-Dict2={'name':'Allen','age':21,'gender':'male'}  #建立词典
+Dict1 = {}                                         #建立空词典
+Dict2 = {'name':'Allen','age':21,'gender':'male'}  #建立词典
 Dict3['gender']='male'                           #赋值法/增加新值
 dict(name='Allen', age=21, gender='male')        #dict内建函数
 dict([('name','Allen'),('age',21),('gender','male')])       #键值对列表（k，v）
@@ -367,9 +372,9 @@ dict.get(key, default=None)                      #返回指定键的值，如果
 dict.has_key(key)                                #如果键在字典dict里返回true，否则返回false
 
 #检查成员关系
-vowels=['a','e','i','o','u']
-word=input("Provide a word to search for vowels:")
-found={}
+vowels = ['a','e','i','o','u']
+word = input("Provide a word to search for vowels:")
+found = {}
 for letter in word:
     if letter in vowels:
         found.setdefault(letter,0)               #初始化
@@ -393,42 +398,51 @@ people['003']['gender']                          #多层
 
 ```python
 #无参数函数，需要输入
-def search4vowels():                            
-    vowels=set('aeiou')
-    word=input('Provide a word to search for vowels:')
-    found=vowels.intersection(set(word))
+def search4vowels():
+    vowels = set('aeiou')
+    word = input('Provide a word to search for vowels:')
+    found = vowels.intersection(set(word))
     for vowel in found:
         print(vowel)
-        
+
+
 #参数函数
 def search4vowels(word):
-    vowels=set('aeiou')
-    found=vowels.intersection(set(word))
+    vowels = set('aeiou')
+    found = vowels.intersection(set(word))
     for vowel in found:
         print(vowel)
-        
+
+
 #多参数函数
-def F1 ( x, y ):                                #計算並返回x 除以 y 的余数与商的函数
+def F1(x, y):  #計算並返回x 除以 y 的余数与商的函数
     a = x % y
-    b = (x-a) / y
-    return  (a,b)                               # 也可以写作 return a, b
-(c,d) = F1(9, 4)                                # 也可以写作 c ,d = F1 ( 9, 4 )
-print (c,d)
+    b = (x - a) / y
+    return (a, b)  # 也可以写作 return a, b
+
+
+(c, d) = F1(9, 4)  # 也可以写作 c ,d = F1 ( 9, 4 )
+print(c, d)
+
 
 #进阶函数
-def search4letters(phrase:str, letters:str)->set:   
-   return set(phrase).intersection(set(letters))
+def search4letters(phrase: str, letters: str) -> set:
+    return set(phrase).intersection(set(letters))
+
 
 #可变参数
-def sum_my(*n):                                 #输入时由([1, 2, 3])简化为(1, 2, 3)
+def sum_my(*n):  #输入时由([1, 2, 3])简化为(1, 2, 3)
     d = 0
     for n in n:
-        d = d + n 
+        d = d + n
     return d
 
+
 #函数默认
-def number(a, b=0, *c, **d):                    #a必须定义，b默认为0，c可多定义，d为小字典，可额外补充。
-    
+def number(a, b=0, *c, **d):  #a必须定义，b默认为0，c可多定义，d为小字典，可额外补充。
+    pass
+
+
 #Global Variables & Local Variables
 #--local variables are inside the function
 #--global variables are in the main program
@@ -438,36 +452,36 @@ def number(a, b=0, *c, **d):                    #a必须定义，b默认为0，c
 
 ```python
 #写入文件
-todos=open('todos.txt','w')                     #清空原来的文件，写一个新文件
-todos.writelines(["put out the trash.","Feed the cat.", "Prepare tax return."]) #写入数据, 不會自動增加换行符（\n）。
-todos.close()  
-
+todos = open('todos.txt', 'w')  #清空原来的文件，写一个新文件
+todos.writelines(["put out the trash.", "Feed the cat.", "Prepare tax return."])  #写入数据, 不會自動增加换行符（\n）。
+todos.close()
 
 #读取文件
 #read
-tasks=open('todos.txt')                         #打开一个文件，返回文件对象tasks
-tasks_content=tasks.read()
+tasks = open('todos.txt')  #打开一个文件，返回文件对象tasks
+tasks_content = tasks.read()
 print(type(tasks_content))
 print(tasks_content)
 tasks.close()
 #readline
-tasks=open('todos.txt')     
-tasks_line=tasks.readline()
+tasks = open('todos.txt')
+tasks_line = tasks.readline()
 print(type(tasks_line))
 print(tasks_line)
 tasks.close()
 #readlines
-tasks=open('todos2.txt')     
-tasks_lines=tasks.readlines()
+tasks = open('todos2.txt')
+tasks_lines = tasks.readlines()
 print(tasks_lines)
 tasks.close()
 #一站式读取
 with open('todos.txt') as tasks:
-    tasks_content=tasks.read()
+    tasks_content = tasks.read()
     print(tasks_content)
-    
+
 #多文件对比是否一直 输出True/False
 import filecmp
+
 r = filecmp.cmp('lecture3-cmp1.txt', 'lecture3-cmp2.txt')
 print(r)
 ```
@@ -615,7 +629,7 @@ q, r = linalg.qr(m3)
 
 ```python
 #输入列index和元素values
-s2=Series([5,'Research Methodology','Python'],index=['coursecode', 'course name', 'software'])
+s2 = Series([5,'Research Methodology','Python'],index=['coursecode', 'course name', 'software'])
 
 #判断缺失值
 s3.isnull()
@@ -685,17 +699,17 @@ s7.sort_index()
 
 ```python
 #建立DataFrame
-d = np.random.rand(5,3)                               #2D ndarray     
+d = np.random.rand(5, 3)  #2D ndarray
 indexd = ['2001', '2002', '2003', '2004', '2005']
 columnd = ['CN', 'US', 'UK']
 df0 = pd.DataFrame(d, index=indexd, columns=columnd)
 
-a = [[1,np.nan,2],[NA,4,None]]                        #array法
+a = [[1, np.nan, 2], [NA, 4, None]]  #array法
 data = pd.DataFrame(a)
 
 #新行列增加
-funddata['rank'] = funddata[c]*100
-funddata[c+' rank'] = funddata[c].rank(ascending = False)
+funddata['rank'] = funddata[c] * 100
+funddata[c + ' rank'] = funddata[c].rank(ascending=False)
 
 #查看属性
 df0.index
@@ -704,14 +718,14 @@ df0.shape
 df0.size
 
 #文件合并
-df1+df2
-pd.concat([df4, df4_2], axis=0)                       #axis： 需要合并链接的轴，0是行，1是列
+df1 + df2
+pd.concat([df4, df4_2], axis=0)  #axis： 需要合并链接的轴，0是行，1是列
 #Series与DataFrame相加
-df4+df4.iloc[0]
+df4 + df4.iloc[0]
 
 #文件相减
 #DataFrame.sub(other, axis='columns', level=None, fill_value=None) 获取DataFrame和其他元素的减法
-df4.sub(df4.iloc[:,0],axis=0)
+df4.sub(df4.iloc[:, 0], axis=0)
 
 #Dataframe读取
 pd.options.display.max_rows = 10
@@ -720,14 +734,14 @@ pd.options.display.max_rows = 10
 df4.rename(index=str.title, columns=str.upper)
 
 #数据标签
-df = pd.DataFrame({"id":[1,2,3,4,5,6], "raw_grade":['a', 'b', 'b', 'a', 'a', 'e']})  #源文件
-df['grade'] = df['raw_grade'].astype("category")      #转类型为分类
-df["grade"].cat.categories = ["very good", "good", "very bad"]       #添加分类（一一对应）
-df["grade"] = df["grade"].cat.set_categories(["very bad", "bad", "medium", "good", "very good"])                                         #当出现一对多时，则按照自身性质顺序对应
-df.groupby("grade").size()                            #对每一类进行统计
+df = pd.DataFrame({"id": [1, 2, 3, 4, 5, 6], "raw_grade": ['a', 'b', 'b', 'a', 'a', 'e']})  #源文件
+df['grade'] = df['raw_grade'].astype("category")  #转类型为分类
+df["grade"].cat.categories = ["very good", "good", "very bad"]  #添加分类（一一对应）
+df["grade"] = df["grade"].cat.set_categories(["very bad", "bad", "medium", "good", "very good"])  #当出现一对多时，则按照自身性质顺序对应
+df.groupby("grade").size()  #对每一类进行统计
 
-data1['alpha'].idxmax()          #最大值的位置
-data1.loc[data1['alpha'].idxmax()]     #最大值所在位置的行
+data1['alpha'].idxmax()  #最大值的位置
+data1.loc[data1['alpha'].idxmax()]  #最大值所在位置的行
 ```
 
 ## 数据处理
@@ -799,7 +813,7 @@ df6.describe()
 col = df6[2]#标准差
 df6[np.abs(col) > 3]     
 df6[(np.abs(df6) > 3).any(1)]
-funddata[(funddata['growth_overall_income_growth_ratio rank'] < int(len(indexstock))*0.3) & (funddata['growth_np_atsopc_dnrgal_yoy rank'] < int(len(indexstock))*0.3)]                             #过滤体哦阿健
+funddata[(funddata['growth_overall_income_growth_ratio rank'] < int(len(indexstock))*0.3) & (funddata['growth_np_atsopc_dnrgal_yoy rank'] < int(len(indexstock))*0.3)]                             
 
 #随机抽样
 sample1 = np.random.permutation(5) 
@@ -1611,5 +1625,4 @@ results.summary()
 # β = str(results.params[1])
 
 ```
-
 
